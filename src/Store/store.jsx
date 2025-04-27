@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import categoryReducer from '../Features/categorySlice';
 
-// Load the state from localStorage
 const loadState = () => {
   try {
     const serialized = localStorage.getItem('dashboardState');
@@ -20,7 +19,6 @@ const loadState = () => {
   }
 };
 
-// Save state to localStorage
 export const saveState = (state) => {
   try {
     const toSave = {
@@ -33,7 +31,6 @@ export const saveState = (state) => {
   }
 };
 
-// Configure the store
 const store = configureStore({
   reducer: {
     categories: categoryReducer,
@@ -41,7 +38,6 @@ const store = configureStore({
   preloadedState: loadState(),
 });
 
-// Throttle saves to localStorage
 let saveTimeout;
 store.subscribe(() => {
   clearTimeout(saveTimeout);

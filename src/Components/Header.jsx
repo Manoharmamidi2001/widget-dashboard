@@ -2,7 +2,7 @@ import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import { AppBar, Box, Toolbar, Typography, InputBase, Button, Drawer, List, ListItem, ListItemText, Checkbox, Divider, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import CloseIcon from '@mui/icons-material/Close';  // Import Close icon
+import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchQuery, removeSelectedWidgets } from '../Features/categorySlice';
 
@@ -75,14 +75,12 @@ export default function Header() {
     if (selectedWidgetIds.length > 0) {
       dispatch(removeSelectedWidgets({ categoryId, widgetIds: selectedWidgetIds }));
     }
-    // Clear selected widgets for the specific category after removal
     setSelectedWidgets(prev => ({
       ...prev,
       [categoryId]: {}
     }));
   };
 
-  // Check if at least one widget is selected in each category
   const isRemoveButtonDisabled = (categoryId) => {
     return Object.values(selectedWidgets[categoryId] || {}).every(value => !value);
   };
@@ -124,7 +122,6 @@ export default function Header() {
         onClose={toggleDrawer(false)}
       >
         <Box sx={{ width: 350, p: 2 }}>
-          {/* Close Button */}
           <IconButton
             edge="start"
             color="inherit"
@@ -146,7 +143,7 @@ export default function Header() {
               <Divider sx={{ mb: 1 }} />
               <List dense>
                 {category.widgets
-                  .filter(widget => widget.title.toLowerCase().includes(searchQuery.toLowerCase())) // Filter widgets based on the search query
+                  .filter(widget => widget.title.toLowerCase().includes(searchQuery.toLowerCase()))
                   .map(widget => (
                     <ListItem key={widget.widget_id} disablePadding>
                       <Checkbox
@@ -162,7 +159,7 @@ export default function Header() {
                 color="secondary"
                 onClick={() => handleRemoveSelectedWidgets(category.id)}
                 sx={{ mt: 2 }}
-                disabled={isRemoveButtonDisabled(category.id)} // Disable if no widgets are selected for this category
+                disabled={isRemoveButtonDisabled(category.id)}
               >
                 Remove Selected Widgets
               </Button>

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { addWidget } from '../Features/categorySlice';
 import { Modal, Box, Typography, TextField, FormControl, InputLabel, Select, MenuItem, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';  // Import CloseIcon
+import CloseIcon from '@mui/icons-material/Close';
 
 const CategorySection = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const CategorySection = () => {
   const [newWidget, setNewWidget] = React.useState({
     title: '',
     chartType: 'pie',
-    labelValuePairs: [{ label: '', value: '' }] // Initialize with one empty pair
+    labelValuePairs: [{ label: '', value: '' }]
   });
 
   const calculateTotal = (dataObj) => {
@@ -95,7 +95,6 @@ const CategorySection = () => {
               >
                 Add Widget
               </Button>
-              {/* Remove Category Button */}
             </div>
           </div>
           <div style={{
@@ -128,7 +127,6 @@ const CategorySection = () => {
         </div>
       ))}
 
-      {/* Add Widget Modal */}
       <Modal open={openAddWidget} onClose={() => setOpenAddWidget(false)}>
   <Box sx={{
     position: 'absolute',
@@ -139,12 +137,11 @@ const CategorySection = () => {
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
-    maxHeight: '80vh',  // Limit the max height
-    overflowY: 'auto',  // Enable vertical scrolling
+    maxHeight: '80vh', 
+    overflowY: 'auto', 
   }}>
     <Typography variant="h6" gutterBottom>
       Add Widget to {currentCategory?.category_name}
-      {/* Close Icon */}
       <IconButton
         edge="end"
         color="inherit"
@@ -174,7 +171,6 @@ const CategorySection = () => {
       </Select>
     </FormControl>
 
-    {/* Label-Value Pairs */}
     {newWidget.labelValuePairs.map((pair, index) => (
       <div key={index} style={{ marginBottom: '10px' }}>
         <TextField
@@ -203,7 +199,6 @@ const CategorySection = () => {
       </div>
     ))}
 
-    {/* Button to Add More Label-Value Pairs */}
     <Button
       variant="outlined"
       color="primary"

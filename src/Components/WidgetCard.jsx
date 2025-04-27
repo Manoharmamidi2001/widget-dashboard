@@ -34,7 +34,6 @@
         display: 'flex',
         flexDirection: 'column',
       }}>
-        {/* Delete Button */}
         <IconButton 
           size="small" 
           onClick={() => handleRemoveWidget(widget.categoryId, widget.widget_id)} 
@@ -43,15 +42,12 @@
           <DeleteIcon fontSize="small" />
         </IconButton>
 
-        {/* Title and Total */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '8px' }}>
           <h4 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>{widget.title}</h4>
           <p style={{ margin: 0, fontSize: '14px', color: '#555' }}>Total: {widget.total}</p>
         </div>
 
-        {/* Chart and Legend */}
         <div style={{ flexGrow: 1, display: 'flex', width: '100%', marginTop: '8px' }}>
-          {/* Chart Area */}
           <div style={{ flex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <ResponsiveContainer width="100%" height="100%">
               {chartType === 'pie' && (
@@ -89,7 +85,6 @@
             </ResponsiveContainer>
           </div>
 
-          {/* Legend Area */}
           <div style={{ flex: 1, paddingLeft: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {chartData.map((entry, index) => (
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '6px' }}>

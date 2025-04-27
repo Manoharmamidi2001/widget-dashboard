@@ -1,7 +1,6 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 import data from '../Data/data.json';
 
-// Initialize with empty array if data is not available
 const initialState = {
   categories: data?.CNAPP_Dashboard?.categories?.map(cat => ({
     ...cat,
@@ -10,7 +9,7 @@ const initialState = {
       ...w,
       widget_id: nanoid()
     })) || []
-  })) || [], // Fallback to empty array
+  })) || [],
   searchQuery: '',
 };
 
@@ -48,7 +47,6 @@ const categorySlice = createSlice({
         }) || []
       };
     },
-    // New action to remove multiple selected widgets
     removeSelectedWidgets: (state, action) => {
       const { categoryId, widgetIds } = action.payload;
       return {
