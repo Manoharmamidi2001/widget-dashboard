@@ -26,7 +26,7 @@
         border: '1px solid #ccc',
         borderRadius: '8px',
         padding: '10px',
-        width: '450px',
+        width: '420px',
         minHeight: '250px',
         backgroundColor: '#fff',
         boxShadow: '0 2px 8px rgba(0,0,0,0.05)',

@@ -100,7 +100,7 @@ const CategorySection = () => {
           </div>
           <div style={{
             display: 'flex',
-            justifyContent: 'start',
+            justifyContent: 'center',
             flexWrap: 'wrap', 
             gap: '30px',
             marginTop: '5px',
