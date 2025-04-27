@@ -1,0 +1,136 @@
+{
+    "CNAPP_Dashboard": {
+      "categories": [
+        {
+          "category_name": "CSPM Executive",
+          "description": "Cloud Security Posture Management Dashboard",
+          "widgets": [
+            {
+              "widget_id": "cspm-001",
+              "title": "Cloud Accounts Status",
+              "type": "connection_status",
+              "data": {
+                "Connected": 5,
+                "Not_Connected": 1,
+                "In_Progress": 2
+              },
+              "last_updated": "2025-04-26T08:03:08Z"
+            },
+            {
+              "widget_id": "cspm-002",
+              "title": "Risk Assessment",
+              "type": "security_findings",
+              "data": {
+                "Failed": 1689,
+                "Warning": 681,
+                "Not_available": 36,
+                "Passed": 7253
+              },
+              "compliance_score": 81.2
+            },
+            {
+              "widget_id": "cspm-003",
+              "title": "Policy Violations",
+              "type": "policy_violations",
+              "data": {
+                "Critical": 12,
+                "High": 34,
+                "Medium": 58,
+                "Low": 102
+              },
+              "last_reviewed": "2025-04-20"
+            }
+          ]
+        },
+        {
+          "category_name": "CWPP",
+          "description": "Cloud Workload Protection Platform Dashboard",
+          "widgets": [
+            {
+              "widget_id": "cwpp-001",
+              "title": "Workload Protection Coverage",
+              "type": "protection_status",
+              "data": {
+                "Protected": 78,
+                "Unprotected": 12,
+                "Partial": 5
+              },
+              "coverage_percentage": 82.1
+            },
+            {
+              "widget_id": "cwpp-002",
+              "title": "Runtime Alerts",
+              "type": "threat_detection",
+              "data": {
+                "Critical": 8,
+                "High": 23,
+                "Medium": 47
+              },
+              "time_frame": "24h"
+            },
+            {
+              "widget_id": "cwpp-003",
+              "title": "Workload Scan Results",
+              "type": "workload_scan",
+              "data": {
+                "Vulnerabilities_Found": 42,
+                "Patches_Applied": 28,
+                "Pending_Patches": 14
+              },
+              "last_scanned": "2025-04-24"
+            }
+          ]
+        },
+        {
+          "category_name": "Registry Scan",
+          "description": "Container Image Security Dashboard",
+          "widgets": [
+            {
+              "widget_id": "reg-001",
+              "title": "Vulnerability Scan Results",
+              "type": "image_scan",
+              "data": {
+                "Total_Images": 84,
+                "Critical": 15,
+                "High": 62,
+                "Medium": 210
+              },
+              "last_scan": "2025-04-25"
+            },
+            {
+              "widget_id": "reg-002",
+              "title": "Compliance Status",
+              "type": "compliance_check",
+              "data": {
+                "CIS": 45,
+                "PCI": 32,
+                "HIPAA": 28
+              },
+              "next_scan": "2025-05-02"
+            },
+            {
+              "widget_id": "reg-003",
+              "title": "Registry Malware Scan",
+              "type": "malware_scan",
+              "data": {
+                "Total_Scanned": 120,
+                "Malware_Found": 3,
+                "Clean_Images": 117
+              },
+              "last_updated": "2025-04-25"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "version": "2.3.1",
+        "last_refresh": "2025-04-26T08:03:08Z",
+        "data_sources": [
+          "AWS Security Hub",
+          "Azure Defender",
+          "GCP Security Command Center"
+        ]
+      }
+    }
+  }
+  
